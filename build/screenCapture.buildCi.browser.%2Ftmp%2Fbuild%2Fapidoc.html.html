@@ -1,0 +1,2324 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/ipfs/js-ipfs#readme">ipfs (v0.23.1)</a>
+</h1>
+<h4>JavaScript implementation of the IPFS specification</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs">module ipfs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.ipfs">
+            function <span class="apidocSignatureSpan"></span>ipfs
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.createNode">
+            function <span class="apidocSignatureSpan">ipfs.</span>createNode
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.index">
+            function <span class="apidocSignatureSpan">ipfs.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>bitswap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>block</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>bootstrap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>commands</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>daemon</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>dag</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>dns</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>files</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>init</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>ls</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>mount</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>object</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>ping</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>pubsub</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>refs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>repo</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>resolve</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>swarm</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>update</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.bitswap">module ipfs.bitswap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.bitswap.builder">
+            function <span class="apidocSignatureSpan">ipfs.bitswap.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.bitswap.handler">
+            function <span class="apidocSignatureSpan">ipfs.bitswap.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.bitswap.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.bitswap.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.block">module ipfs.block</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.block.builder">
+            function <span class="apidocSignatureSpan">ipfs.block.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.block.handler">
+            function <span class="apidocSignatureSpan">ipfs.block.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.block.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.block.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.bootstrap">module ipfs.bootstrap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.bootstrap.builder">
+            function <span class="apidocSignatureSpan">ipfs.bootstrap.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.bootstrap.handler">
+            function <span class="apidocSignatureSpan">ipfs.bootstrap.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.bootstrap.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.bootstrap.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.commands">module ipfs.commands</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.commands.handler">
+            function <span class="apidocSignatureSpan">ipfs.commands.</span>handler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.commands.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.commands.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.config">module ipfs.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.config.builder">
+            function <span class="apidocSignatureSpan">ipfs.config.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.config.handler">
+            function <span class="apidocSignatureSpan">ipfs.config.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.config.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.config.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.daemon">module ipfs.daemon</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.daemon.handler">
+            function <span class="apidocSignatureSpan">ipfs.daemon.</span>handler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.daemon.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.daemon.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.dag">module ipfs.dag</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.dag.builder">
+            function <span class="apidocSignatureSpan">ipfs.dag.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.dag.handler">
+            function <span class="apidocSignatureSpan">ipfs.dag.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.dag.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.dag.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.dns">module ipfs.dns</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.dns.handler">
+            function <span class="apidocSignatureSpan">ipfs.dns.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.dns.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.dns.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.files">module ipfs.files</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.files.builder">
+            function <span class="apidocSignatureSpan">ipfs.files.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.files.handler">
+            function <span class="apidocSignatureSpan">ipfs.files.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.files.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.files.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.id">module ipfs.id</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.id.handler">
+            function <span class="apidocSignatureSpan">ipfs.id.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.id.</span>builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.id.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.id.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.index">module ipfs.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.index.index">
+            function <span class="apidocSignatureSpan">ipfs.</span>index
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.index.createNode">
+            function <span class="apidocSignatureSpan">ipfs.index.</span>createNode
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.init">module ipfs.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.init.handler">
+            function <span class="apidocSignatureSpan">ipfs.init.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.init.</span>builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.init.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.init.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.ls">module ipfs.ls</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.ls.handler">
+            function <span class="apidocSignatureSpan">ipfs.ls.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.ls.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.ls.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.mount">module ipfs.mount</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.mount.handler">
+            function <span class="apidocSignatureSpan">ipfs.mount.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.mount.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.mount.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.object">module ipfs.object</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.object.builder">
+            function <span class="apidocSignatureSpan">ipfs.object.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.object.handler">
+            function <span class="apidocSignatureSpan">ipfs.object.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.object.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.object.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.ping">module ipfs.ping</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.ping.handler">
+            function <span class="apidocSignatureSpan">ipfs.ping.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.ping.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.ping.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.pubsub">module ipfs.pubsub</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.pubsub.builder">
+            function <span class="apidocSignatureSpan">ipfs.pubsub.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.pubsub.handler">
+            function <span class="apidocSignatureSpan">ipfs.pubsub.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.pubsub.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.pubsub.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.refs">module ipfs.refs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.refs.handler">
+            function <span class="apidocSignatureSpan">ipfs.refs.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.refs.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.refs.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.repo">module ipfs.repo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.repo.builder">
+            function <span class="apidocSignatureSpan">ipfs.repo.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.repo.handler">
+            function <span class="apidocSignatureSpan">ipfs.repo.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.repo.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.repo.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.resolve">module ipfs.resolve</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.resolve.handler">
+            function <span class="apidocSignatureSpan">ipfs.resolve.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.resolve.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.resolve.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.swarm">module ipfs.swarm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.swarm.builder">
+            function <span class="apidocSignatureSpan">ipfs.swarm.</span>builder
+            <span class="apidocSignatureSpan">(yargs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.swarm.handler">
+            function <span class="apidocSignatureSpan">ipfs.swarm.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.swarm.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.swarm.</span>description</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.update">module ipfs.update</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.update.handler">
+            function <span class="apidocSignatureSpan">ipfs.update.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.update.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.update.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.utils">module ipfs.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.utils.createLogger">
+            function <span class="apidocSignatureSpan">ipfs.utils.</span>createLogger
+            <span class="apidocSignatureSpan">(visible)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.utils.getAPICtl">
+            function <span class="apidocSignatureSpan">ipfs.utils.</span>getAPICtl
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.utils.getIPFS">
+            function <span class="apidocSignatureSpan">ipfs.utils.</span>getIPFS
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.utils.getRepoPath">
+            function <span class="apidocSignatureSpan">ipfs.utils.</span>getRepoPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.utils.isDaemonOn">
+            function <span class="apidocSignatureSpan">ipfs.utils.</span>isDaemonOn
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.ipfs.version">module ipfs.version</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ipfs.version.handler">
+            function <span class="apidocSignatureSpan">ipfs.version.</span>handler
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">ipfs.version.</span>builder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.version.</span>command</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">ipfs.version.</span>describe</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs" id="apidoc.module.ipfs">module ipfs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.ipfs" id="apidoc.element.ipfs.ipfs">
+        function <span class="apidocSignatureSpan"></span>ipfs
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class IPFS extends EventEmitter {
+  constructor (options) {
+    super()
+
+    this._options = {
+      init: true,
+      start: true,
+      EXPERIMENTAL: {}
+    }
+
+    options = options || {}
+
+    extend(this._options, options)
+
+    if (options.init === false) {
+      this._options.init = false
+    }
+
+    if (!(options.start === false)) {
+      this._options.start = true
+    }
+
+    if (typeof options.repo === 'string' ||
+        options.repo === undefined) {
+      this._repo = defaultRepo(options.repo)
+    } else {
+      this._repo = options.repo
+    }
+
+    // IPFS utils
+    this.log = debug('jsipfs')
+    this.log.err = debug('jsipfs:err')
+
+    this.on('error', (err) =&gt; this.log(err))
+
+    // IPFS types
+    this.types = {
+      Buffer: Buffer,
+      PeerId: PeerId,
+      PeerInfo: PeerInfo,
+      multiaddr: multiaddr,
+      multihash: multihash,
+      CID: CID
+    }
+
+    // IPFS Core Internals
+    // this._repo - assigned above
+    this._peerInfoBook = new PeerBook()
+    this._peerInfo = undefined
+    this._libp2pNode = undefined
+    this._bitswap = undefined
+    this._blockService = new BlockService(this._repo)
+    this._ipldResolver = new IPLDResolver(this._blockService)
+    this._pubsub = undefined
+
+    // IPFS Core exposed components
+    //   - for booting up a node
+    this.init = components.init(this)
+    this.preStart = components.preStart(this)
+    this.start = components.start(this)
+    this.stop = components.stop(this)
+    this.isOnline = components.isOnline(this)
+    //   - interface-ipfs-core defined API
+    this.version = components.version(this)
+    this.id = components.id(this)
+    this.repo = components.repo(this)
+    this.bootstrap = components.bootstrap(this)
+    this.config = components.config(this)
+    this.block = components.block(this)
+    this.object = components.object(this)
+    this.dag = components.dag(this)
+    this.libp2p = components.libp2p(this)
+    this.swarm = components.swarm(this)
+    this.files = components.files(this)
+    this.bitswap = components.bitswap(this)
+    this.ping = components.ping(this)
+    this.pubsub = components.pubsub(this)
+
+    if (this._options.EXPERIMENTAL.pubsub) {
+      this.log('EXPERIMENTAL pubsub is enabled')
+    }
+    this.state = require('./state')(this)
+
+    boot(this)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.createNode" id="apidoc.element.ipfs.createNode">
+        function <span class="apidocSignatureSpan">ipfs.</span>createNode
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(options) =&gt; {
+  return new IPFS(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.index" id="apidoc.element.ipfs.index">
+        function <span class="apidocSignatureSpan">ipfs.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class IPFS extends EventEmitter {
+  constructor (options) {
+    super()
+
+    this._options = {
+      init: true,
+      start: true,
+      EXPERIMENTAL: {}
+    }
+
+    options = options || {}
+
+    extend(this._options, options)
+
+    if (options.init === false) {
+      this._options.init = false
+    }
+
+    if (!(options.start === false)) {
+      this._options.start = true
+    }
+
+    if (typeof options.repo === 'string' ||
+        options.repo === undefined) {
+      this._repo = defaultRepo(options.repo)
+    } else {
+      this._repo = options.repo
+    }
+
+    // IPFS utils
+    this.log = debug('jsipfs')
+    this.log.err = debug('jsipfs:err')
+
+    this.on('error', (err) =&gt; this.log(err))
+
+    // IPFS types
+    this.types = {
+      Buffer: Buffer,
+      PeerId: PeerId,
+      PeerInfo: PeerInfo,
+      multiaddr: multiaddr,
+      multihash: multihash,
+      CID: CID
+    }
+
+    // IPFS Core Internals
+    // this._repo - assigned above
+    this._peerInfoBook = new PeerBook()
+    this._peerInfo = undefined
+    this._libp2pNode = undefined
+    this._bitswap = undefined
+    this._blockService = new BlockService(this._repo)
+    this._ipldResolver = new IPLDResolver(this._blockService)
+    this._pubsub = undefined
+
+    // IPFS Core exposed components
+    //   - for booting up a node
+    this.init = components.init(this)
+    this.preStart = components.preStart(this)
+    this.start = components.start(this)
+    this.stop = components.stop(this)
+    this.isOnline = components.isOnline(this)
+    //   - interface-ipfs-core defined API
+    this.version = components.version(this)
+    this.id = components.id(this)
+    this.repo = components.repo(this)
+    this.bootstrap = components.bootstrap(this)
+    this.config = components.config(this)
+    this.block = components.block(this)
+    this.object = components.object(this)
+    this.dag = components.dag(this)
+    this.libp2p = components.libp2p(this)
+    this.swarm = components.swarm(this)
+    this.files = components.files(this)
+    this.bitswap = components.bitswap(this)
+    this.ping = components.ping(this)
+    this.pubsub = components.pubsub(this)
+
+    if (this._options.EXPERIMENTAL.pubsub) {
+      this.log('EXPERIMENTAL pubsub is enabled')
+    }
+    this.state = require('./state')(this)
+
+    boot(this)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.bitswap" id="apidoc.module.ipfs.bitswap">module ipfs.bitswap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.bitswap.builder" id="apidoc.element.ipfs.bitswap.builder">
+        function <span class="apidocSignatureSpan">ipfs.bitswap.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('bitswap')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.bitswap.handler" id="apidoc.element.ipfs.bitswap.handler">
+        function <span class="apidocSignatureSpan">ipfs.bitswap.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.block" id="apidoc.module.ipfs.block">module ipfs.block</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.block.builder" id="apidoc.element.ipfs.block.builder">
+        function <span class="apidocSignatureSpan">ipfs.block.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('block')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.block.handler" id="apidoc.element.ipfs.block.handler">
+        function <span class="apidocSignatureSpan">ipfs.block.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.bootstrap" id="apidoc.module.ipfs.bootstrap">module ipfs.bootstrap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.bootstrap.builder" id="apidoc.element.ipfs.bootstrap.builder">
+        function <span class="apidocSignatureSpan">ipfs.bootstrap.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('bootstrap')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.bootstrap.handler" id="apidoc.element.ipfs.bootstrap.handler">
+        function <span class="apidocSignatureSpan">ipfs.bootstrap.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.commands" id="apidoc.module.ipfs.commands">module ipfs.commands</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.commands.handler" id="apidoc.element.ipfs.commands.handler">
+        function <span class="apidocSignatureSpan">ipfs.commands.</span>handler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler() {
+  const basePath = path.resolve(__dirname, '..')
+
+  // modeled after https://github.com/vdemedes/ronin/blob/master/lib/program.js#L78
+  const files = glob(path.join(basePath, 'commands', '**', '*.js'))
+  const cmds = files.map((p) =&gt; {
+    return p.replace(/\//g, path.sep)
+      .replace(/^./, ($1) =&gt; $1.toUpperCase())
+      .replace(path.join(basePath, 'commands'), '')
+      .replace(path.sep, '')
+      .split(path.sep)
+      .join(' ')
+      .replace('.js', '')
+  }).sort().map((cmd) =&gt; `ipfs ${cmd}`)
+
+  console.log(['ipfs'].concat(cmds).join('\n'))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.config" id="apidoc.module.ipfs.config">module ipfs.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.config.builder" id="apidoc.element.ipfs.config.builder">
+        function <span class="apidocSignatureSpan">ipfs.config.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('config')
+    .options({
+      bool: {
+        type: 'boolean',
+        default: false,
+        global: false
+      },
+      json: {
+        type: 'boolean',
+        default: false,
+        global: false
+      }
+    })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.config.handler" id="apidoc.element.ipfs.config.handler">
+        function <span class="apidocSignatureSpan">ipfs.config.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+  if (argv._handled) {
+    return
+  }
+  argv._handled = true
+
+  const bool = argv.bool
+  const json = argv.json
+  const key = argv.key
+  let value = argv.value
+
+  if (!value) {
+    // Get the value of a given key
+    argv.ipfs.config.get(key, (err, value) =&gt; {
+      if (err) {
+        throw new Error('failed to read the config')
+      }
+
+      if (typeof value === 'object') {
+        console.log(JSON.stringify(value, null, 2))
+      } else {
+        console.log(value)
+      }
+    })
+  } else {
+    // Set the new value of a given key
+
+    if (bool) {
+      value = (value === 'true')
+    } else if (json) {
+      try {
+        value = JSON.parse(value)
+      } catch (err) {
+        throw new Error('invalid JSON provided')
+      }
+    }
+
+    argv.ipfs.config.set(key, value, (err) =&gt; {
+      if (err) {
+        throw new Error('failed to read the config')
+      }
+    })
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.daemon" id="apidoc.module.ipfs.daemon">module ipfs.daemon</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.daemon.handler" id="apidoc.element.ipfs.daemon.handler">
+        function <span class="apidocSignatureSpan">ipfs.daemon.</span>handler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler() {
+  console.log('Initializing daemon...')
+
+  const repoPath = utils.getRepoPath()
+  httpAPI = new HttpAPI(repoPath)
+
+  httpAPI.start((err) =&gt; {
+    if (err &amp;&amp; err.code === 'ENOENT') {
+      console.log('Error: no ipfs repo found in ' + repoPath)
+      console.log('please run: jsipfs init')
+      process.exit(1)
+    }
+    if (err) {
+      throw err
+    }
+    console.log('Daemon is ready')
+  })
+
+  process.on('SIGINT', () =&gt; {
+    console.log('Received interrupt signal, shutting down..')
+    httpAPI.stop((err) =&gt; {
+      if (err) {
+        throw err
+      }
+      process.exit(0)
+    })
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.dag" id="apidoc.module.ipfs.dag">module ipfs.dag</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.dag.builder" id="apidoc.element.ipfs.dag.builder">
+        function <span class="apidocSignatureSpan">ipfs.dag.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('dag')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.dag.handler" id="apidoc.element.ipfs.dag.handler">
+        function <span class="apidocSignatureSpan">ipfs.dag.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.dns" id="apidoc.module.ipfs.dns">module ipfs.dns</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.dns.handler" id="apidoc.element.ipfs.dns.handler">
+        function <span class="apidocSignatureSpan">ipfs.dns.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.files" id="apidoc.module.ipfs.files">module ipfs.files</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.files.builder" id="apidoc.element.ipfs.files.builder">
+        function <span class="apidocSignatureSpan">ipfs.files.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('files')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.files.handler" id="apidoc.element.ipfs.files.handler">
+        function <span class="apidocSignatureSpan">ipfs.files.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.id" id="apidoc.module.ipfs.id">module ipfs.id</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.id.handler" id="apidoc.element.ipfs.id.handler">
+        function <span class="apidocSignatureSpan">ipfs.id.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+  // TODO: handle argv.format
+  argv.ipfs.id((err, id) =&gt; {
+    if (err) {
+      throw err
+    }
+
+    console.log(JSON.stringify(id, '', 2))
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.index" id="apidoc.module.ipfs.index">module ipfs.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.index.index" id="apidoc.element.ipfs.index.index">
+        function <span class="apidocSignatureSpan">ipfs.</span>index
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class IPFS extends EventEmitter {
+  constructor (options) {
+    super()
+
+    this._options = {
+      init: true,
+      start: true,
+      EXPERIMENTAL: {}
+    }
+
+    options = options || {}
+
+    extend(this._options, options)
+
+    if (options.init === false) {
+      this._options.init = false
+    }
+
+    if (!(options.start === false)) {
+      this._options.start = true
+    }
+
+    if (typeof options.repo === 'string' ||
+        options.repo === undefined) {
+      this._repo = defaultRepo(options.repo)
+    } else {
+      this._repo = options.repo
+    }
+
+    // IPFS utils
+    this.log = debug('jsipfs')
+    this.log.err = debug('jsipfs:err')
+
+    this.on('error', (err) =&gt; this.log(err))
+
+    // IPFS types
+    this.types = {
+      Buffer: Buffer,
+      PeerId: PeerId,
+      PeerInfo: PeerInfo,
+      multiaddr: multiaddr,
+      multihash: multihash,
+      CID: CID
+    }
+
+    // IPFS Core Internals
+    // this._repo - assigned above
+    this._peerInfoBook = new PeerBook()
+    this._peerInfo = undefined
+    this._libp2pNode = undefined
+    this._bitswap = undefined
+    this._blockService = new BlockService(this._repo)
+    this._ipldResolver = new IPLDResolver(this._blockService)
+    this._pubsub = undefined
+
+    // IPFS Core exposed components
+    //   - for booting up a node
+    this.init = components.init(this)
+    this.preStart = components.preStart(this)
+    this.start = components.start(this)
+    this.stop = components.stop(this)
+    this.isOnline = components.isOnline(this)
+    //   - interface-ipfs-core defined API
+    this.version = components.version(this)
+    this.id = components.id(this)
+    this.repo = components.repo(this)
+    this.bootstrap = components.bootstrap(this)
+    this.config = components.config(this)
+    this.block = components.block(this)
+    this.object = components.object(this)
+    this.dag = components.dag(this)
+    this.libp2p = components.libp2p(this)
+    this.swarm = components.swarm(this)
+    this.files = components.files(this)
+    this.bitswap = components.bitswap(this)
+    this.ping = components.ping(this)
+    this.pubsub = components.pubsub(this)
+
+    if (this._options.EXPERIMENTAL.pubsub) {
+      this.log('EXPERIMENTAL pubsub is enabled')
+    }
+    this.state = require('./state')(this)
+
+    boot(this)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.index.createNode" id="apidoc.element.ipfs.index.createNode">
+        function <span class="apidocSignatureSpan">ipfs.index.</span>createNode
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(options) =&gt; {
+  return new IPFS(options)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.init" id="apidoc.module.ipfs.init">module ipfs.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.init.handler" id="apidoc.element.ipfs.init.handler">
+        function <span class="apidocSignatureSpan">ipfs.init.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+  const path = utils.getRepoPath()
+
+  const log = utils.createLogger(true)
+  log(`initializing ipfs node at ${path}`)
+
+  const node = new IPFS({
+    repo: new Repo(path),
+    init: false,
+    start: false
+  })
+
+  node.init({
+    bits: argv.bits,
+    emptyRepo: argv.emptyRepo,
+    log: log
+  }, (err) =&gt; {
+    if (err) {
+      if (err.code === 'EACCES') {
+        err.message = `EACCES: permission denied, stat $IPFS_PATH/version`
+      }
+      console.error(err.toString())
+      process.exit(1)
+    }
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.ls" id="apidoc.module.ipfs.ls">module ipfs.ls</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.ls.handler" id="apidoc.element.ipfs.ls.handler">
+        function <span class="apidocSignatureSpan">ipfs.ls.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.mount" id="apidoc.module.ipfs.mount">module ipfs.mount</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.mount.handler" id="apidoc.element.ipfs.mount.handler">
+        function <span class="apidocSignatureSpan">ipfs.mount.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.object" id="apidoc.module.ipfs.object">module ipfs.object</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.object.builder" id="apidoc.element.ipfs.object.builder">
+        function <span class="apidocSignatureSpan">ipfs.object.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('object')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.object.handler" id="apidoc.element.ipfs.object.handler">
+        function <span class="apidocSignatureSpan">ipfs.object.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.ping" id="apidoc.module.ipfs.ping">module ipfs.ping</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.ping.handler" id="apidoc.element.ipfs.ping.handler">
+        function <span class="apidocSignatureSpan">ipfs.ping.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.pubsub" id="apidoc.module.ipfs.pubsub">module ipfs.pubsub</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.pubsub.builder" id="apidoc.element.ipfs.pubsub.builder">
+        function <span class="apidocSignatureSpan">ipfs.pubsub.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('pubsub')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.pubsub.handler" id="apidoc.element.ipfs.pubsub.handler">
+        function <span class="apidocSignatureSpan">ipfs.pubsub.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.refs" id="apidoc.module.ipfs.refs">module ipfs.refs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.refs.handler" id="apidoc.element.ipfs.refs.handler">
+        function <span class="apidocSignatureSpan">ipfs.refs.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.repo" id="apidoc.module.ipfs.repo">module ipfs.repo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.repo.builder" id="apidoc.element.ipfs.repo.builder">
+        function <span class="apidocSignatureSpan">ipfs.repo.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('repo')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.repo.handler" id="apidoc.element.ipfs.repo.handler">
+        function <span class="apidocSignatureSpan">ipfs.repo.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.resolve" id="apidoc.module.ipfs.resolve">module ipfs.resolve</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.resolve.handler" id="apidoc.element.ipfs.resolve.handler">
+        function <span class="apidocSignatureSpan">ipfs.resolve.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.swarm" id="apidoc.module.ipfs.swarm">module ipfs.swarm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.swarm.builder" id="apidoc.element.ipfs.swarm.builder">
+        function <span class="apidocSignatureSpan">ipfs.swarm.</span>builder
+        <span class="apidocSignatureSpan">(yargs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder(yargs) {
+  return yargs
+    .commandDir('swarm')
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.swarm.handler" id="apidoc.element.ipfs.swarm.handler">
+        function <span class="apidocSignatureSpan">ipfs.swarm.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.update" id="apidoc.module.ipfs.update">module ipfs.update</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.update.handler" id="apidoc.element.ipfs.update.handler">
+        function <span class="apidocSignatureSpan">ipfs.update.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.utils" id="apidoc.module.ipfs.utils">module ipfs.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.utils.createLogger" id="apidoc.element.ipfs.utils.createLogger">
+        function <span class="apidocSignatureSpan">ipfs.utils.</span>createLogger
+        <span class="apidocSignatureSpan">(visible)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(visible) =&gt; {
+  return (msg, newline) =&gt; {
+    if (newline === undefined) {
+      newline = true
+    }
+    if (visible) {
+      if (msg === undefined) {
+        msg = ''
+      }
+      msg = newline ? msg + '\n' : msg
+      process.stdout.write(msg)
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  describe: "Don't add and pin help files to the local storage"
+}
+  },
+
+  handler (argv) {
+const path = utils.getRepoPath()
+
+const log = utils.<span class="apidocCodeKeywordSpan">createLogger</span>(true)
+log(`initializing ipfs node at ${path}`)
+
+const node = new IPFS({
+  repo: new Repo(path),
+  init: false,
+  start: false
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.utils.getAPICtl" id="apidoc.element.ipfs.utils.getAPICtl">
+        function <span class="apidocSignatureSpan">ipfs.utils.</span>getAPICtl
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getAPICtl() {
+  if (!isDaemonOn()) {
+    throw new Error('daemon is not on')
+  }
+  const apiPath = path.join(exports.getRepoPath(), 'api')
+  const apiAddr = multiaddr(fs.readFileSync(apiPath).toString())
+  return APIctl(apiAddr.toString())
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.utils.getIPFS" id="apidoc.element.ipfs.utils.getIPFS">
+        function <span class="apidocSignatureSpan">ipfs.utils.</span>getIPFS
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(callback) =&gt; {
+  if (isDaemonOn()) {
+    return callback(null, getAPICtl(), (cb) =&gt; cb())
+  }
+
+  const node = new IPFS({
+    repo: exports.getRepoPath(),
+    init: false,
+    start: false,
+    EXPERIMENTAL: {
+      pubsub: true
+    }
+  })
+
+  const cleanup = (cb) =&gt; {
+    if (node &amp;&amp; node._repo &amp;&amp; !node._repo.closed) {
+      node._repo.close(() =&gt; cb())
+    } else {
+      cb()
+    }
+  }
+
+  node.on('error', (err) =&gt; {
+    throw err
+  })
+
+  node.once('ready', () =&gt; {
+    callback(null, node, cleanup)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return cli
+  .help()
+  .strict(false)
+  .completion()
+  .parse(args)
+}
+
+utils.<span class="apidocCodeKeywordSpan">getIPFS</span>((err, ipfs, cleanup) =&gt; {
+if (err) {
+  throw err
+}
+
+// finalize cli setup
+cli // eslint-disable-line
+  .help()
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.utils.getRepoPath" id="apidoc.element.ipfs.utils.getRepoPath">
+        function <span class="apidocSignatureSpan">ipfs.utils.</span>getRepoPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; {
+  return process.env.IPFS_PATH || os.homedir() + '/.jsipfs'
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log.error = debug('cli:error')
+
+exports = module.exports
+
+exports.isDaemonOn = isDaemonOn
+function isDaemonOn () {
+  try {
+    fs.readFileSync(path.join(exports.<span class="apidocCodeKeywordSpan">getRepoPath</span>(), 'api'))
+    log('daemon is on')
+    return true
+  } catch (err) {
+    log('daemon is off')
+    return false
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.utils.isDaemonOn" id="apidoc.element.ipfs.utils.isDaemonOn">
+        function <span class="apidocSignatureSpan">ipfs.utils.</span>isDaemonOn
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDaemonOn() {
+  try {
+    fs.readFileSync(path.join(exports.getRepoPath(), 'api'))
+    log('daemon is on')
+    return true
+  } catch (err) {
+    log('daemon is off')
+    return false
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.ipfs.version" id="apidoc.module.ipfs.version">module ipfs.version</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ipfs.version.handler" id="apidoc.element.ipfs.version.handler">
+        function <span class="apidocSignatureSpan">ipfs.version.</span>handler
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handler(argv) {
+  // TODO: handle argv.{repo|commit|number}
+  argv.ipfs.version((err, version) =&gt; {
+    if (err) {
+      throw err
+    }
+
+    console.log(`js-ipfs version: ${version.version}`)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
